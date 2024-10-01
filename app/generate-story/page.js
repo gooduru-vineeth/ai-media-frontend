@@ -16,7 +16,7 @@ export default function GenerateStoryPage() {
     setError(null)
 
     try {
-      const response = await fetch('/api/generate-story', {
+      const response = await fetch('https://8zdhdl5q-8000.inc1.devtunnels.ms/api/generate-story', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ prompt })

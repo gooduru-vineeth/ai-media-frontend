@@ -66,6 +66,24 @@ export function Home() {
                 Generate an audio with AI.
               </p>
             </Link>
+            <Link
+              href="/translate-text"
+              className="bg-muted p-4 rounded-lg hover:bg-muted/80 transition"
+              prefetch={false}>
+              <h2 className="text-xl font-bold mb-2">Translate Text</h2>
+              <p className="text-muted-foreground">
+                Translate text with AI.
+              </p>
+            </Link>
+            <Link
+              href="/text-to-speech"
+              className="bg-muted p-4 rounded-lg hover:bg-muted/80 transition"
+              prefetch={false}>
+              <h2 className="text-xl font-bold mb-2">Text to Speech</h2>
+              <p className="text-muted-foreground">
+                Convert text to speech with AI.
+              </p>
+            </Link>
           </div>
         </section>
         <section className="mb-10">
