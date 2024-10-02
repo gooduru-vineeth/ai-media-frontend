@@ -26,6 +26,11 @@ To read more about using these font, please visit the Next.js documentation:
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
+function getRandomLightColor() {
+  const hue = Math.floor(Math.random() * 360);
+  return `hsl(${hue}, 70%, 90%)`;
+}
+
 export function Home() {
   return (
     (<div className="flex flex-col min-h-screen">
@@ -38,28 +43,32 @@ export function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Link
               href="/generate-story"
-              className="bg-muted p-4 rounded-lg hover:bg-muted/80 transition"
+              className="p-4 rounded-lg hover:opacity-90 transition"
+              style={{ backgroundColor: getRandomLightColor() }}
               prefetch={false}>
               <h2 className="text-xl font-bold mb-2">Generate Story</h2>
               <p className="text-muted-foreground">Generate a story with AI.</p>
             </Link>
             <Link
               href="/generate-image"
-              className="bg-muted p-4 rounded-lg hover:bg-muted/80 transition"
+              className="p-4 rounded-lg hover:opacity-90 transition"
+              style={{ backgroundColor: getRandomLightColor() }}
               prefetch={false}>
               <h2 className="text-xl font-bold mb-2">Generate Image</h2>
               <p className="text-muted-foreground">Generate an image with AI.</p>
             </Link>
             <Link
               href="/generate-video"
-              className="bg-muted p-4 rounded-lg hover:bg-muted/80 transition"
+              className="p-4 rounded-lg hover:opacity-90 transition"
+              style={{ backgroundColor: getRandomLightColor() }}
               prefetch={false}>
               <h2 className="text-xl font-bold mb-2">Generate Video</h2>
               <p className="text-muted-foreground">Generate a video with AI.</p>
             </Link>
             <Link
               href="/generate-audio"
-              className="bg-muted p-4 rounded-lg hover:bg-muted/80 transition"
+              className="p-4 rounded-lg hover:opacity-90 transition"
+              style={{ backgroundColor: getRandomLightColor() }}
               prefetch={false}>
               <h2 className="text-xl font-bold mb-2">Generate Audio</h2>
               <p className="text-muted-foreground">
@@ -68,7 +77,8 @@ export function Home() {
             </Link>
             <Link
               href="/translate-text"
-              className="bg-muted p-4 rounded-lg hover:bg-muted/80 transition"
+              className="p-4 rounded-lg hover:opacity-90 transition"
+              style={{ backgroundColor: getRandomLightColor() }}
               prefetch={false}>
               <h2 className="text-xl font-bold mb-2">Translate Text</h2>
               <p className="text-muted-foreground">
@@ -77,11 +87,32 @@ export function Home() {
             </Link>
             <Link
               href="/text-to-speech"
-              className="bg-muted p-4 rounded-lg hover:bg-muted/80 transition"
+              className="p-4 rounded-lg hover:opacity-90 transition"
+              style={{ backgroundColor: getRandomLightColor() }}
               prefetch={false}>
               <h2 className="text-xl font-bold mb-2">Text to Speech</h2>
               <p className="text-muted-foreground">
                 Convert text to speech with AI.
+              </p>
+            </Link>
+            <Link
+              href="/speech-to-text"
+              className="p-4 rounded-lg hover:opacity-90 transition"
+              style={{ backgroundColor: getRandomLightColor() }}
+              prefetch={false}>
+              <h2 className="text-xl font-bold mb-2">Speech to Text</h2>
+              <p className="text-muted-foreground">
+                Convert speech to text with AI.
+              </p>
+            </Link>
+            <Link
+              href="/generate-transcribe"
+              className="p-4 rounded-lg hover:opacity-90 transition"
+              style={{ backgroundColor: getRandomLightColor() }}
+              prefetch={false}>
+              <h2 className="text-xl font-bold mb-2">Generate Transcribe</h2>
+              <p className="text-muted-foreground">
+                Transcribe from audio using AI.
               </p>
             </Link>
           </div>

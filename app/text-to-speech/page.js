@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button"
 
 const LANGUAGES = [
   { code: 'hi-IN', name: 'Hindi (India)' },
-  { code: 'en-US', name: 'English (US)' },
   { code: 'bn-IN', name: 'Bengali (India)' },
   { code: 'kn-IN', name: 'Kannada (India)' },
   { code: 'ml-IN', name: 'Malayalam (India)' },
@@ -38,7 +37,7 @@ export default function TextToSpeechPage() {
   const [pace, setPace] = useState(1.65)
   const [loudness, setLoudness] = useState(1.5)
   const [speechSampleRate, setSpeechSampleRate] = useState(8000)
-  const [enablePreprocessing, setEnablePreprocessing] = useState(true)
+  const [enablePreprocessing, setEnablePreprocessing] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [audioUrl, setAudioUrl] = useState('')
   const [error, setError] = useState(null)
@@ -168,7 +167,7 @@ export default function TextToSpeechPage() {
             ))}
           </select>
         </div>
-        <div>
+        {/* <div>
           <label htmlFor="pitch" className="block text-sm font-medium text-gray-700 mb-1">
             Pitch
           </label>
@@ -179,8 +178,8 @@ export default function TextToSpeechPage() {
             value={pitch}
             onChange={(e) => setPitch(Number(e.target.value))}
           />
-        </div>
-        <div>
+        </div> */}
+        {/* <div>
           <label htmlFor="pace" className="block text-sm font-medium text-gray-700 mb-1">
             Pace
           </label>
@@ -192,8 +191,8 @@ export default function TextToSpeechPage() {
             value={pace}
             onChange={(e) => setPace(Number(e.target.value))}
           />
-        </div>
-        <div>
+        </div> */}
+        {/* <div>
           <label htmlFor="loudness" className="block text-sm font-medium text-gray-700 mb-1">
             Loudness
           </label>
@@ -205,8 +204,8 @@ export default function TextToSpeechPage() {
             value={loudness}
             onChange={(e) => setLoudness(Number(e.target.value))}
           />
-        </div>
-        <div>
+        </div> */}
+        {/* <div>
           <label htmlFor="speechSampleRate" className="block text-sm font-medium text-gray-700 mb-1">
             Speech Sample Rate
           </label>
@@ -217,8 +216,8 @@ export default function TextToSpeechPage() {
             value={speechSampleRate}
             onChange={(e) => setSpeechSampleRate(Number(e.target.value))}
           />
-        </div>
-        <div className="flex items-center">
+        </div> */}
+        {/* <div className="flex items-center">
           <input
             type="checkbox"
             id="enablePreprocessing"
@@ -229,7 +228,7 @@ export default function TextToSpeechPage() {
           <label htmlFor="enablePreprocessing" className="text-sm font-medium text-gray-700">
             Enable Preprocessing
           </label>
-        </div>
+        </div> */}
         <Button 
           type="submit" 
           className="w-full"
