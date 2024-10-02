@@ -4,17 +4,22 @@ import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 
 const LANGUAGES = [
-  { code: 'es', name: 'Spanish' },
-  { code: 'fr', name: 'French' },
-  { code: 'de', name: 'German' },
-  { code: 'it', name: 'Italian' },
-  { code: 'pt', name: 'Portuguese' },
-  // Add more languages as needed
+  { code: 'hi-IN', name: 'Hindi (India)' },
+  { code: 'bn-IN', name: 'Bengali (India)' },
+  { code: 'kn-IN', name: 'Kannada (India)' },
+  { code: 'ml-IN', name: 'Malayalam (India)' },
+  { code: 'mr-IN', name: 'Marathi  (India)' },
+  { code: 'od-IN', name: 'Odia (India)' },
+  { code: 'pa-IN', name: 'Punjabi (India)' },
+  { code: 'ta-IN', name: 'Tamil (India)' },
+  { code: 'te-IN', name: 'Telugu (India)' },
+  { code: 'en-IN', name: 'English (India)' },
+  { code: 'gu-IN', name: 'Gujarati (India)' },
 ]
 
 export default function TranslateTextPage() {
   const [inputText, setInputText] = useState('')
-  const [targetLanguage, setTargetLanguage] = useState('es')
+  const [targetLanguage, setTargetLanguage] = useState('hi-IN')
   const [isLoading, setIsLoading] = useState(false)
   const [translatedText, setTranslatedText] = useState('')
   const [error, setError] = useState(null)
@@ -26,10 +31,21 @@ export default function TranslateTextPage() {
     setError(null)
 
     try {
-      const response = await fetch('/api/translate-text', {
+      const response = await fetch('https://8zdhdl5q-8000.inc1.devtunnels.ms/api/translate-text', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text: inputText, targetLanguage })
+        headers: { 
+          'Content-Type': 'application/json',
+          'accept': 'application/json'
+        },
+        body: JSON.stringify({
+          input: inputText,
+          source_language_code: "en-IN",
+          target_language_code: targetLanguage,
+          speaker_gender: "Female",
+          mode: "formal",
+          model: "mayura:v1",
+          enable_preprocessing: false
+        })
       })
       
       if (!response.ok) {
@@ -37,7 +53,7 @@ export default function TranslateTextPage() {
       }
 
       const data = await response.json()
-      setTranslatedText(data.translatedText)
+      setTranslatedText(data.translated_text)
     } catch (error) {
       console.error('Error translating text:', error)
       setError('An error occurred while translating the text. Please try again.')
@@ -52,7 +68,7 @@ export default function TranslateTextPage() {
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label htmlFor="inputText" className="block text-sm font-medium text-gray-700 mb-1">
-            Text to Translate
+            Text to Translate (English)
           </label>
           <textarea
             id="inputText"

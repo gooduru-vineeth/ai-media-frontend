@@ -86,6 +86,59 @@ export function Home() {
             </Link>
           </div>
         </section>
+
+        <hr className="my-10 border-t border-gray-200" />
+
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold mb-4">Useful Tools</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* <Link
+              href="/trim-media"
+              className="bg-muted p-4 rounded-lg hover:bg-muted/80 transition"
+              prefetch={false}>
+              <h2 className="text-xl font-bold mb-2">Trim Media</h2>
+              <p className="text-muted-foreground">Trim your audio or video files.</p>
+            </Link> */}
+            <Link
+              href="/trim-audio"
+              className="bg-muted p-4 rounded-lg hover:bg-muted/80 transition"
+              prefetch={false}>
+              <h2 className="text-xl font-bold mb-2">Trim Audio</h2>
+              <p className="text-muted-foreground">Cut and edit your audio files.</p>
+            </Link>
+            <Link
+              href="/trim-video"
+              className="bg-muted p-4 rounded-lg hover:bg-muted/80 transition"
+              prefetch={false}>
+              <h2 className="text-xl font-bold mb-2">Trim Video</h2>
+              <p className="text-muted-foreground">Edit and shorten your video clips.</p>
+            </Link>
+            <Link
+              href="/combine-audio"
+              className="bg-muted p-4 rounded-lg hover:bg-muted/80 transition"
+              prefetch={false}>
+              <h2 className="text-xl font-bold mb-2">Combine Audio</h2>
+              <p className="text-muted-foreground">Merge multiple audio files into one.</p>
+            </Link>
+            <Link
+              href="/combine-video"
+              className="bg-muted p-4 rounded-lg hover:bg-muted/80 transition"
+              prefetch={false}>
+              <h2 className="text-xl font-bold mb-2">Combine Video</h2>
+              <p className="text-muted-foreground">Merge multiple video files into one.</p>
+            </Link>
+            {/* <Link
+              href="/media-info"
+              className="bg-muted p-4 rounded-lg hover:bg-muted/80 transition"
+              prefetch={false}>
+              <h2 className="text-xl font-bold mb-2">Media Info</h2>
+              <p className="text-muted-foreground">Get detailed information about your media files.</p>
+            </Link> */}
+          </div>
+        </section>
+
+        <hr className="my-10 border-t border-gray-200" />
+
         <section className="mb-10">
           <h2 className="text-2xl font-bold mb-4">Use Case</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -136,6 +189,9 @@ export function Home() {
             </Link>
           </div>
         </section>
+
+        <hr className="my-10 border-t border-gray-200" />
+
         <section className="mb-10">
           <h2 className="text-2xl font-bold mb-4">Blogs</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
