@@ -6,6 +6,7 @@
 3. [Getting Started](#getting-started)
    - [Prerequisites](#prerequisites)
    - [Installation](#installation)
+   - [Environment Setup](#environment-setup)
 4. [Usage](#usage)
    - [Generate Story](#generate-story)
    - [Generate Image](#generate-image)
@@ -60,12 +61,21 @@ Our platform offers the following key features:
    npm install
    ```
 
-4. Start the development server:
+### Environment Setup
+
+1. Create a `.env.local` file in the root directory of the project.
+2. Add the following environment variables:
+   ```
+   NEXT_PUBLIC_API_BASE_URL=your_api_base_url_here
+   ```
+   Replace `your_api_base_url_here` with the actual base URL of your API.
+
+3. Start the development server:
    ```
    npm run dev
    ```
 
-5. Open your browser and visit `http://localhost:3000`
+4. Open your browser and visit `http://localhost:3000`
 
 ## Usage
 
@@ -103,13 +113,13 @@ Go to `/generate-transcribe` to transcribe audio files and detect the language. 
 
 ## API Reference
 
-Our platform integrates with various AI APIs to provide its functionality. Here are some key API endpoints:
+Our platform integrates with various AI APIs to provide its functionality. The base URL for all API endpoints is set in the `NEXT_PUBLIC_API_BASE_URL` environment variable. Here are some key API endpoints:
 
-- Speech to Text API: `https://8zdhdl5q-8000.inc1.devtunnels.ms/api/speech-to-text`
-- Translate Text API: `https://8zdhdl5q-8000.inc1.devtunnels.ms/api/translate-text`
-- Speech to Text and Translate API: `https://8zdhdl5q-8000.inc1.devtunnels.ms/api/speech-to-text-translate`
+- Speech to Text API: `${NEXT_PUBLIC_API_BASE_URL}/api/speech-to-text`
+- Translate Text API: `${NEXT_PUBLIC_API_BASE_URL}/api/translate-text`
+- Speech to Text and Translate API: `${NEXT_PUBLIC_API_BASE_URL}/api/speech-to-text-translate`
 
-For detailed API documentation, please refer to our [API Documentation](https://8zdhdl5q-8000.inc1.devtunnels.ms/docs).
+For detailed API documentation, please refer to our API Documentation (link to be added).
 
 ## Contributing
 
